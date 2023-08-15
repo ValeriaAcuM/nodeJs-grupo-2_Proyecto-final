@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./public/css/styles.css">
+  <title>Pokedex</title>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Welcome to Pokedex</h1>
+      <p>Build your Pokemon</p>
+    </header>
+
+    <form id="survey-form">
+      <div class="form-group">
+        <label id="name-label" for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="form-control"
+          placeholder="Enter Pokemon name"
+          required/>
+      </div>
+
+      <div class="form-group">
+        <p>Choose type</p>
+        <select id="dropdown" name="role" class="form-control" required>
+          <option disabled selected value>Select</option>
+          <option value="water">Water</option>
+          <option value="fire">Fire</option>
+          <option value="plant">Plant</option>
+          <option value="fairy">Fairy</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <p>Add description</p>
+        <textarea
+          id="description"
+          class="input-textarea"
+          name="description"
+          placeholder="Enter the description here..."
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <p>Choose evolution</p>
+        <label>
+          <input
+            name="evolution"
+            value="flying"
+            type="radio"
+            class="input-radio"
+            checked
+          />Flying</label>
+        <label>
+          <input
+            name="evolution"
+            value="sinister"
+            type="radio"
+            class="input-radio"
+          />Sinister</label>
+        <label>
+          <input
+            name="evolution"
+            value="fighter"
+            type="radio"
+            class="input-radio"
+          />Fighter</label>      
+        <label>
+          <input
+            name="evolution"
+            value="psychic"
+            type="radio"
+            class="input-radio"
+          />Psychic</label>
+        
+      <div class="form-group">
+        <p>Choose weakness</p>
+        <label>
+          <input
+            name="weaknesses"
+            value="poison"
+            type="radio"
+            class="input-radio"
+            checked
+          />Poison</label>
+        <label>
+          <input
+            name="weaknesses"
+            value="electricity"
+            type="radio"
+            class="input-radio"
+          />Electricty</label>
+        <label>
+          <input
+            name="weaknesses"
+            value="fire"
+            type="radio"
+            class="input-radio"
+          />Fire</label>
+        <label>
+          <input
+            name="weaknesses"
+            value="rock"
+            type="radio"
+            class="input-radio"
+          />Rock</label>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" id="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+
+  </main>
+  <div class="card_container">
+    <ul id="pokemonList"></ul>
+  </div>
+
+    <div id="updateModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeUpdateModal()">&times;</span>
+        <h2>Update Pokemon</h2>
+        <form id="updateForm">
+          <label for="updatedName">Name:</label>
+          <input type="text" id="updatedName" name="updatedName">
+          <label for="updatedType">Type:</label>
+          <input type="text" id="updatedType" name="updatedType">
+          <label for="updatedDescrip">Description:</label>
+          <input type="text" id="updatedDescrip" name="updatedDescrip">
+          <label for="updatedEv">evolution:</label>
+          <input type="text" id="updatedEv" name="updatedEv">
+          <label for="updatedWeak">weaknesses:</label>
+          <input type="text" id="updatedWeak" name="updatedWeak">
+          <button type="button">Update</button>
+      </div>
+    </div>
+
+  <script src="./public/js/main.js"></script>
+</body>
+</html>
