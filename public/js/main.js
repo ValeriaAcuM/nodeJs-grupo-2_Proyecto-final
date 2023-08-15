@@ -114,7 +114,8 @@ async function fetchPokemonDataAndRenderCards() {
     const response = await fetch("http://127.0.0.1:3000/pokemons");
     if (response.ok) {
       const pokemons = await response.json();
-      renderCards(pokemons);
+      const sortedPokemons = pokemons.sort((a, b) => a.name.localeCompare(b.name));
+      renderCards(sortedPokemons);
     } else {
       console.log("Error fetching Pokemon data");
     }
